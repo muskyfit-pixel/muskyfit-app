@@ -1,0 +1,7 @@
+{
+  "name": "Muskyfit",
+  "description": "Professional 1-to-1 and Online Lifestyle Coaching. Built for Real Life.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
