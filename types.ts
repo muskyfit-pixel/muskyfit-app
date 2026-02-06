@@ -70,20 +70,19 @@ export interface Workout {
   exercises: Exercise[];
 }
 
+// types.ts (future tidy-up)
 export interface HealthSafetyCheck {
   hasHeartCondition: boolean;
   hasHighBP: boolean;
   hasDiabetes: boolean;
   hasCurrentInjuries: boolean;
   hasPastInjuries: boolean;
-  hasHadSurgery: boolean;
   usesMedication: boolean;
   isPregnantOrPostnatal: boolean;
-  hasJointPain: boolean;
   doctorAdvisedNoExercise: boolean;
   clearanceRequired: boolean;
-  medicalDetails: string;
-  injuryDetails: string;
+  medicalDetails?: string;
+  injuryDetails?: string;
 }
 
 export interface Lifestyle {
