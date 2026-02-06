@@ -1,16 +1,3 @@
-<div
-  style={{
-    background: "black",
-    color: "lime",
-    padding: 6,
-    fontSize: 11,
-    textAlign: "center",
-  }}
->
-  BUILD v1.0.7 – 06 FEB 2026
-</div>
-
-
 import { useNavigate } from "react-router-dom";
 
 const members = [
@@ -31,20 +18,18 @@ export default function MemberDatabase() {
         maxWidth: 420,
         margin: "0 auto",
         padding: 16,
+        overflowX: "hidden",
         boxSizing: "border-box",
       }}
     >
-      {/* DEPLOY TEST HEADER */}
       <h1
         style={{
           fontSize: 14,
-          background: "red",
-          color: "white",
-          padding: 8,
-          textAlign: "center",
+          fontWeight: 600,
+          marginBottom: 12,
         }}
       >
-        DEPLOY TEST – IF YOU SEE RED, IT WORKS
+        MEMBER DATABASE
       </h1>
 
       {members.map((m) => (
@@ -59,26 +44,30 @@ export default function MemberDatabase() {
             boxSizing: "border-box",
           }}
         >
+          {/* NAME — SMALLER */}
           <h2
             style={{
               margin: 0,
-              fontSize: 15,
-              fontWeight: 600,
+              fontSize: 16,
+              fontWeight: 700,
+              lineHeight: 1.2,
             }}
           >
             {m.name}
           </h2>
 
+          {/* SUBTEXT */}
           <p
             style={{
-              margin: "4px 0 8px",
+              margin: "6px 0 10px",
               fontSize: 12,
-              color: "#555",
+              color: "#666",
             }}
           >
             {m.goal} • {m.days}
           </p>
 
+          {/* BUTTON — SMALLER */}
           <button
             type="button"
             onClick={() => navigate("/plan")}
