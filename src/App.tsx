@@ -4,7 +4,7 @@ import Onboarding from "./pages/Onboarding"
 import CoachDashboard from "./pages/CoachDashboard"
 import ClientShell from "./pages/ClientShell"
 
-import Home from "./pages/home"
+import Home from "./pages/Home"
 import Food from "./pages/Food"
 import Training from "./pages/Training"
 import Progress from "./pages/Progress"
@@ -16,21 +16,23 @@ export default function App() {
       <Routes>
 
         {/* PUBLIC */}
-        <Route path="/" element={<Navigate to="/onboarding" />} />
+        <Route path="/" element={<Navigate to="/onboarding" replace />} />
         <Route path="/onboarding" element={<Onboarding />} />
 
         {/* COACH */}
         <Route path="/coach" element={<CoachDashboard />} />
 
-        {/* CLIENT */}
+        {/* CLIENT APP */}
         <Route path="/app" element={<ClientShell />}>
-          <Route index element={<Navigate to="home" />} />
-          <Route path="home" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="food" element={<Food />} />
           <Route path="training" element={<Training />} />
           <Route path="progress" element={<Progress />} />
           <Route path="account" element={<Account />} />
         </Route>
+
+        {/* SAFETY */}
+        <Route path="*" element={<Navigate to="/onboarding" replace />} />
 
       </Routes>
     </BrowserRouter>
