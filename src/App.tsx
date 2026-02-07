@@ -15,14 +15,14 @@ export default function App() {
     <BrowserRouter>
       <Routes>
 
-        {/* Public */}
+        {/* PUBLIC */}
         <Route path="/" element={<Navigate to="/onboarding" />} />
         <Route path="/onboarding" element={<Onboarding />} />
 
-        {/* Coach */}
+        {/* COACH */}
         <Route path="/coach" element={<CoachDashboard />} />
 
-        {/* Client App */}
+        {/* CLIENT APP */}
         <Route path="/app" element={<ClientShell />}>
           <Route index element={<Navigate to="home" />} />
           <Route path="home" element={<Home />} />
@@ -32,7 +32,7 @@ export default function App() {
           <Route path="account" element={<Account />} />
         </Route>
 
-        {/* Fallback */}
+        {/* FALLBACK */}
         <Route path="*" element={<Navigate to="/onboarding" />} />
 
       </Routes>
