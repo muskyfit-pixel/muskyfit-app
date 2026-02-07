@@ -1,27 +1,26 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import ClientShell from "./pages/ClientShell";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Login from "./pages/Login";
-import Onboarding from "./pages/Onboarding";
-import CoachDashboard from "./pages/CoachDashboard";
+import { User } from "./types";
 
-export default function App() {
+function App() {
+  const [user, setUser] = useState<User | null>(null);
+
+  const handleLogin = (loggedInUser: User) => {
+    setUser(loggedInUser);
+    // later: persist user, guard routes, etc
+  };
+
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public */}
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/onboarding" element={<Onboarding />} />
-
-        {/* Client app */}
-        <Route path="/app/*" element={<ClientShell />} />
-
-        {/* Coach */}
-        <Route path="/coach" element={<CoachDashboard />} />
-
-        {/* Fallback */}
-        <Route path="*" element={<Navigate to="/login" />} />
+        <Route
+          path="/"
+          element={<Login onLogin={handleLogin} />}
+        />
       </Routes>
     </BrowserRouter>
   );
 }
+
+export default App;
