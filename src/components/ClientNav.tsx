@@ -1,24 +1,15 @@
 import { NavLink } from "react-router-dom"
 
-const linkStyle = {
-  flex: 1,
-  padding: "12px",
-  textAlign: "center" as const,
+const linkStyle = ({ isActive }: { isActive: boolean }) => ({
+  marginRight: "16px",
   textDecoration: "none",
-  fontWeight: 600,
-  color: "#111"
-}
+  fontWeight: isActive ? "bold" : "normal"
+})
 
 export default function ClientNav() {
   return (
-    <nav style={{
-      display: "flex",
-      borderTop: "1px solid #ddd",
-      position: "sticky",
-      bottom: 0,
-      background: "#fff"
-    }}>
-      <NavLink to="/app" end style={linkStyle}>Home</NavLink>
+    <nav style={{ padding: "12px", borderBottom: "1px solid #ddd" }}>
+      <NavLink to="/app/home" style={linkStyle}>Home</NavLink>
       <NavLink to="/app/food" style={linkStyle}>Food</NavLink>
       <NavLink to="/app/training" style={linkStyle}>Training</NavLink>
       <NavLink to="/app/progress" style={linkStyle}>Progress</NavLink>

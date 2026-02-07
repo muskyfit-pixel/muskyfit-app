@@ -15,24 +15,25 @@ export default function App() {
     <BrowserRouter>
       <Routes>
 
-        {/* PUBLIC */}
-        <Route path="/" element={<Navigate to="/onboarding" replace />} />
+        {/* Public */}
+        <Route path="/" element={<Navigate to="/onboarding" />} />
         <Route path="/onboarding" element={<Onboarding />} />
 
-        {/* COACH */}
+        {/* Coach */}
         <Route path="/coach" element={<CoachDashboard />} />
 
-        {/* CLIENT APP */}
+        {/* Client App */}
         <Route path="/app" element={<ClientShell />}>
-          <Route index element={<Home />} />
+          <Route index element={<Navigate to="home" />} />
+          <Route path="home" element={<Home />} />
           <Route path="food" element={<Food />} />
           <Route path="training" element={<Training />} />
           <Route path="progress" element={<Progress />} />
           <Route path="account" element={<Account />} />
         </Route>
 
-        {/* SAFETY */}
-        <Route path="*" element={<Navigate to="/onboarding" replace />} />
+        {/* Fallback */}
+        <Route path="*" element={<Navigate to="/onboarding" />} />
 
       </Routes>
     </BrowserRouter>
