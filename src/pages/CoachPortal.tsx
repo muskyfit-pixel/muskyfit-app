@@ -44,6 +44,7 @@ export default function CoachPortal() {
             background: "#111",
             color: "#fff",
             textAlign: "left",
+            cursor: "pointer",
           }}
         >
           <div style={{ fontWeight: 600 }}>{m.name}</div>
