@@ -2,11 +2,10 @@
   "name": "muskyfit-app",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node ./node_modules/vite/bin/vite.js build",
-    "preview": "node ./node_modules/vite/bin/vite.js preview"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
