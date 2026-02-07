@@ -1,16 +1,23 @@
+import BaseLayout from "../components/BaseLayout"
+
 export default function Onboarding() {
   return (
-    <div
-      style={{
-        width: "100%",
-        maxWidth: 480,
-        margin: "0 auto",
-        padding: 16,
-        boxSizing: "border-box",
-      }}
-    >
-      <h1>Onboarding</h1>
-      <p>This page will be rebuilt cleanly.</p>
-    </div>
-  );
+    <BaseLayout title="Health Questionnaire">
+      <p>Please answer the questions below honestly.</p>
+
+      <p>
+        Once submitted, I will review your answers and confirm whether
+        you can move forward.
+      </p>
+
+      <button style={btn}>Submit PAR-Q</button>
+    </BaseLayout>
+  )
+}
+
+const btn = {
+  marginTop: "20px",
+  padding: "14px",
+  width: "100%",
+  fontSize: "16px",
 }
