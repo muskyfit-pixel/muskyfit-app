@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 
 import Onboarding from "./pages/Onboarding"
 import CoachDashboard from "./pages/CoachDashboard"
-import ClientShell from "./pages/ClientShell"
 
+import ClientShell from "./pages/ClientShell"
 import Home from "./pages/Home"
 import Food from "./pages/Food"
 import Training from "./pages/Training"
@@ -15,8 +15,10 @@ export default function App() {
     <BrowserRouter>
       <Routes>
 
-        {/* PUBLIC */}
-        <Route path="/" element={<Navigate to="/onboarding" />} />
+        {/* ENTRY */}
+        <Route path="/" element={<Navigate to="/onboarding" replace />} />
+
+        {/* PAR-Q / ONBOARDING */}
         <Route path="/onboarding" element={<Onboarding />} />
 
         {/* COACH */}
@@ -24,7 +26,7 @@ export default function App() {
 
         {/* CLIENT APP */}
         <Route path="/app" element={<ClientShell />}>
-          <Route index element={<Navigate to="home" />} />
+          <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="food" element={<Food />} />
           <Route path="training" element={<Training />} />
@@ -33,7 +35,7 @@ export default function App() {
         </Route>
 
         {/* FALLBACK */}
-        <Route path="*" element={<Navigate to="/onboarding" />} />
+        <Route path="*" element={<Navigate to="/onboarding" replace />} />
 
       </Routes>
     </BrowserRouter>
