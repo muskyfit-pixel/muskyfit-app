@@ -1,3 +1,4 @@
+
 export interface FoodDatabaseItem {
   id: string;
   display_name: string;

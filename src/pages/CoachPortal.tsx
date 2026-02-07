@@ -4,8 +4,7 @@ type Member = {
   id: string;
   name: string;
   goal: string;
-  days?: string;
-  status?: string;
+  status: string;
 };
 
 export default function CoachPortal() {
@@ -16,14 +15,12 @@ export default function CoachPortal() {
       id: "1",
       name: "Mitesh Mistry",
       goal: "Strength",
-      days: "4 days / week",
       status: "active",
     },
     {
       id: "2",
       name: "Jane Member",
       goal: "Health",
-      days: "3 days / week",
       status: "active",
     },
   ];
