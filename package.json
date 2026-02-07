@@ -1,12 +1,13 @@
 {
-  "name": "muskyfit",
+  "name": "muskyfit-app",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "build": "node node_modules/vite/bin/vite.js build",
-  "preview": "node node_modules/vite/bin/vite.js preview"
-},
+    "dev": "vite",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "node ./node_modules/vite/bin/vite.js preview"
+  },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "react": "^18.2.0",
