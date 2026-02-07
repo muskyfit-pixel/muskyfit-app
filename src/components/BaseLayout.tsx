@@ -2,10 +2,11 @@ import { ReactNode } from "react"
 import { useNavigate } from "react-router-dom"
 
 type Props = {
-  title: string
-  showBack?: boolean
-  children: ReactNode
-}
+  title?: string;
+  showBack?: boolean;
+  children: React.ReactNode;
+};
+
 
 export default function BaseLayout({ title, showBack = false, children }: Props) {
   const navigate = useNavigate()

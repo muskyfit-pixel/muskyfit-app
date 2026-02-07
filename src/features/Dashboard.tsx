@@ -13,7 +13,7 @@ export default function Dashboard({ user }: Props) {
   const profile = user || {};
 
   return (
-    <BaseLayout>
+    <BaseLayout title="Your dashboard">
       {/* ===== DASHBOARD STATS ===== */}
       <div style={styles.grid}>
         <Stat

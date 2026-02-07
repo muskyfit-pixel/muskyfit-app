@@ -1,39 +1,26 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
+import ClientShell from "./pages/ClientShell";
+import Login from "./pages/Login";
 import Onboarding from "./pages/Onboarding";
 import CoachDashboard from "./pages/CoachDashboard";
-import ClientShell from "./pages/ClientShell";
-
-import Home from "./pages/Home";
-import Food from "./pages/Food";
-import Training from "./pages/Training";
-import Progress from "./pages/Progress";
-import Account from "./pages/Account";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-
         {/* Public */}
-        <Route path="/" element={<Navigate to="/onboarding" />} />
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/onboarding" element={<Onboarding />} />
+
+        {/* Client app */}
+        <Route path="/app/*" element={<ClientShell />} />
 
         {/* Coach */}
         <Route path="/coach" element={<CoachDashboard />} />
 
-        {/* Client App */}
-        <Route path="/app" element={<ClientShell />}>
-          <Route index element={<Home />} />
-          <Route path="food" element={<Food />} />
-          <Route path="training" element={<Training />} />
-          <Route path="progress" element={<Progress />} />
-          <Route path="account" element={<Account />} />
-        </Route>
-
         {/* Fallback */}
-        <Route path="*" element={<Navigate to="/onboarding" />} />
-
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </BrowserRouter>
   );
