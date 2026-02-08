@@ -1,11 +1,18 @@
-export function MuskyLogo({ size = 48 }: { size?: number }) {
+type MuskyLogoProps = {
+  size?: number;
+};
+
+export default function MuskyLogo({ size = 64 }: MuskyLogoProps) {
   return (
-    <div style={{ width: size, height: size, margin: "0 auto" }}>
-      <img
-        src="/logo.png"
-        alt="MuskyFit"
-        style={{ width: "100%", height: "100%" }}
-      />
-    </div>
+    <img
+      src="/muskyfit-logo.png"
+      alt="MuskyFit"
+      style={{
+        width: size,
+        height: size,
+        display: "block",
+        margin: "0 auto",
+      }}
+    />
   );
 }
