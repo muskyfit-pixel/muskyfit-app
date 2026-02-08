@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { MuskyLogo } from "../components/MuskyLogo";
+import MuskyLogo from "../components/MuskyLogo";
 
 export default function Login() {
   const navigate = useNavigate();
