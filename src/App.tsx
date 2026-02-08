@@ -1,20 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import AppShell from "./components/AppShell";
 import Login from "./pages/Login";
-import { User } from "./types";
 
-function App() {
-  const [user, setUser] = useState<User | null>(null);
-
-  const handleLogin = (u: User) => {
-    setUser(u);
-  };
-
+export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Login onLogin={handleLogin} />} />
-    </Routes>
+    <AppShell>
+      <Routes>
+        <Route path="/" element={<Login />} />
+      </Routes>
+    </AppShell>
   );
 }
-
-export default App;
